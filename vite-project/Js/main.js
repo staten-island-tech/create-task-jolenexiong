@@ -1,6 +1,6 @@
 import "./css/style.css";
 
-const URL = "https://simple-grocery-store-api.glitch.me"
+const URL = "https://api.punkapi.com/v2/beers/random"
 
 async function getData(URL) {
   const reponse = await fetch(URL);
@@ -11,3 +11,9 @@ console.log(data);
 }
 
 getData(URL);
+
+const DOMSelectors = {
+  searchbtn: document.querySelector(".searchbtn"),
+  allergenbtn: document.querySelector(".serachallergenbtn"),
+}
+
