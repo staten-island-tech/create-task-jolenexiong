@@ -19,21 +19,27 @@ catch (error){
 
 getData(URL);
 
+
+async functionAddData () {
+  const gallery = document.querySelector('.gallery');
+  const data = await getData();
+
+  data.forEach(beer=> {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const name = document.createElement('h1');
+    name.textContent = beer.name;
+
+
+    const desc = document.createElement('h3');
+    desc.textContent = beer.description;
+  })
+}
+
 const DOMSelectors = {
   searchbtn: document.querySelector(".searchbtn"),
   allergenbtn: document.querySelector(".allergenbtn"),
   gallery: document.querySelector(".gallery"),
 }
 
-function displayall() {
-  beer.forEach((bottle)=> DOMSelectors.gallery.insertAdjacentHTML(
-    "beforeend",
-    `<div class="card">
-<h2 class="name">${bottle.name}</h2>
-<img src = "${bottle.img_url}"class="pic">
-<h2>${bottle.tagline}</h2>
-</div>`
-));
-}
-
-displayall();
