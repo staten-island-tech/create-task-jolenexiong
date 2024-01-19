@@ -31,9 +31,11 @@ async functionAddData () {
     const name = document.createElement('h1');
     name.textContent = beer.name;
 
-
-    const desc = document.createElement('h3');
+    const desc = document.createElement('h2');
     desc.textContent = beer.description;
+
+    const attnlv = document.createElement('h3');
+    attnlv.textContent = 
   })
 }
 
