@@ -17,3 +17,8 @@ h1 {
   text-align: center;
 }
 
+.card {
+  display: flex;
+  
+}
+
