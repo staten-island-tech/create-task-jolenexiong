@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #app {
@@ -47,6 +47,6 @@ h2 {
   
 }
 
-.addy {
-  padding-left: 10%;
+.enterspell {
+  font-size: 28px;
 }

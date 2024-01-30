@@ -1,6 +1,6 @@
 import "./css/style.css";
 
-const URL = "https://api.openbrewerydb.org/v1/breweries"
+const URL = "https://api.potterdb.com/v1/spells"
 
 // async function getData(URL) {
 // try{
@@ -19,16 +19,16 @@ const URL = "https://api.openbrewerydb.org/v1/breweries"
 const DOMSelectors = {
   searchbtn: document.querySelector(".searchbtn"),
   gallery: document.querySelector(".gallery"),
-  search: document.querySelector("#lookbeer"),
+  search: document.querySelector("#lookcharacter"),
 }
 
 async function getData () {
   try{
     const res = await fetch(URL);
-    const brewery = await res.json();
-    console.log(brewery);
-    addCard(brewery);
-    return(brewery);
+    const spells = await res.json();
+    console.log(spells);
+    addCard(spells);
+    return(spells);
   }
   catch (error){
     console.log(error);
@@ -36,25 +36,27 @@ async function getData () {
 }};
 getData()
 
-function addCard (brewery) {
-  brewery.forEach((brewery) =>
+function addCard (spells) {
+  spells.forEach((spells) =>
   DOMSelectors.gallery.insertAdjacentHTML (
     "beforeend", 
     `<div class="card">
-        <div class="name">${brewery.name}</div>
-        <div class="addy">${brewery.address_1}</div>
-        <div class="city">City:${brewery.city}</div>
+        <div class="name">${spells.name}</div>
+        <div class="incantation>${spells.incantation}</div>
+        <div class="img">${spells.image}</div>
+        <div class="effect">Effect:${spells.effect}</div>
+        <div class="hand">${spells.hand}</div>
         
       </div>`
   ))
 };
 
-var dropdown = document.getElementById('dropdown')
+// var dropdown = document.getElementById('dropdown')
 
-dropdown.addEventListener('change', function(){
-  var option = dropdown.options[dropdown.selectedIndex].textContent;
-  brewery.forEach((brewery)=> brewery.filter)
-})
+// dropdown.addEventListener('change', function(){
+//   var option = dropdown.options[dropdown.selectedIndex].textContent;
+//   brewery.forEach((brewery)=> brewery.filter)
+// })
 
 
 
