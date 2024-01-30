@@ -1,6 +1,6 @@
 import "./css/style.css";
 
-const URL = "https://api.punkapi.com/v2/beers"
+const URL = "https://api.openbrewerydb.org/v1/breweries"
 
 // async function getData(URL) {
 // try{
@@ -18,7 +18,6 @@ const URL = "https://api.punkapi.com/v2/beers"
 
 const DOMSelectors = {
   searchbtn: document.querySelector(".searchbtn"),
-  allergenbtn: document.querySelector(".allergenbtn"),
   gallery: document.querySelector(".gallery"),
   search: document.querySelector("#lookbeer"),
 }
@@ -26,10 +25,10 @@ const DOMSelectors = {
 async function getData () {
   try{
     const res = await fetch(URL);
-    const beers = await res.json();
-    console.log(beers);
-    addCard(beers);
-    return(beers);
+    const brewery = await res.json();
+    console.log(brewery);
+    addCard(brewery);
+    return(brewery);
   }
   catch (error){
     console.log(error);
@@ -37,24 +36,25 @@ async function getData () {
 }};
 getData()
 
-function addCard (beers) {
-  beers.forEach((beer) =>
+function addCard (brewery) {
+  brewery.forEach((brewery) =>
   DOMSelectors.gallery.insertAdjacentHTML (
     "beforeend", 
     `<div class="card">
-        <div class="name">${beer.name}</div>
-        <div class="tagline">${beer.tagline}</div>
-        <div class="img">${beer.img_url}</div>
-        <div class="description">${beer.description}</div>
-        <div class="attenuation">${beer.attenuation_level}</div>
+        <div class="name">${brewery.name}</div>
+        <div class="addy">${brewery.address_1}</div>
+        <div class="city">City:${brewery.city}</div>
         
       </div>`
-    
   ))
 };
 
+var dropdown = document.getElementById('dropdown')
 
-
+dropdown.addEventListener('change', function(){
+  var option = dropdown.options[dropdown.selectedIndex].textContent;
+  brewery.forEach((brewery)=> brewery.filter)
+})
 
 
 
