@@ -68,7 +68,7 @@ DOMSelectors.dropdown.addEventListener('click', function(){
     }
   ]
   const filtered = allSpells.filter((spell) =>
-    spell.attributes.category.toLowerCase()===spellcategory);
+    spell.attributes.category.toLowerCase().includes(spellcategory));
  addCard(filtered);
 });
 
