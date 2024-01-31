@@ -20,44 +20,57 @@ const DOMSelectors = {
   searchbtn: document.querySelector(".searchbtn"),
   gallery: document.querySelector(".gallery"),
   search: document.querySelector("#lookcharacter"),
-}
+  dropdown: document.getElementById('dropdown'),
+};
+
+let allSpells = {};
 
 async function getData () {
   try{
     const res = await fetch(URL);
     const spells = await res.json();
     console.log(spells);
-    addCard(spells);
-    return(spells);
+    allSpells = spells.data
+    addCard(allSpells);
+    return spells;
   }
   catch (error){
     console.log(error);
   
-}};
-getData()
+}
+};
+
+getData();
 
 function addCard (spells) {
-  spells.forEach((spells) =>
+  spells.forEach((spell) =>
   DOMSelectors.gallery.insertAdjacentHTML (
     "beforeend", 
     `<div class="card">
-        <div class="name">${spells.name}</div>
-        <div class="incantation>${spells.incantation}</div>
-        <div class="img">${spells.image}</div>
-        <div class="effect">Effect:${spells.effect}</div>
-        <div class="hand">${spells.hand}</div>
+        <div class="name">${spell.attributes.name}</div>
+        <div class="incantation>${spell.attributes.incantation}</div>
+        <div class="img"><img src="${spell.attributes.image}"></div>
+        <div class="effect">Effect:${spell.attributes.effect}</div>
+        <div class="hand">Hand Movements:${spell.attributes.hand}</div>
         
       </div>`
   ))
 };
 
-// var dropdown = document.getElementById('dropdown')
 
-// dropdown.addEventListener('change', function(){
-//   var option = dropdown.options[dropdown.selectedIndex].textContent;
-//   brewery.forEach((brewery)=> brewery.filter)
-// })
-
+DOMSelectors.dropdown.addEventListener('click', function(){
+  const spellcategory = DOMSelectors.dropdown.value.toLowerCase();
+  const allSpells = [
+    {
+      attributes: {
+        category: ["Charms", "Curses", "Transfigurations", "Healing Spells", "Jinxes",]
+      }
+    }
+  ]
+  const filtered = allSpells.filter((spell) =>
+    spell.attributes.category.toLowerCase()===spellcategory);
+ addCard(filtered);
+});
 
 
 

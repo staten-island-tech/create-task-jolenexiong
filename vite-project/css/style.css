@@ -3,15 +3,17 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #000033;
+  display:flex;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 h2 {
-  font-size: 25px;
+  font-size: 35px;
+  background-color: #FAFAD2;
+  padding:10px;
+  
 }
 
 #app {
@@ -23,21 +25,22 @@ h2 {
 
 .card {
   display: flex;
-  background-color: rgb(206, 241, 199);
+  background-color: #FAFAD2;
   padding: 3%;
   margin: 2%;
   border-radius: 25px;
-  width: 40%;
-  height: 40%;
+  width: 20%;
+  height: 100%;
   flex-wrap: wrap;
+  justify-content: center;
   
 }
 
 .gallery {
   display: flex;
   align-items: center;
-  flex-direction: column;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .name {
@@ -49,4 +52,18 @@ h2 {
 
 .enterspell {
   font-size: 28px;
+  background-color: #FAFAD2;
+  padding:1%;
+  border-radius: 25px;
 }
+
+.gif {
+  width:65%;
+  height:1.8%;
+  margin: 35px;
+  }
+
+  #dropdown {
+    font-size: 25px;
+    font-style: oblique;
+  }
