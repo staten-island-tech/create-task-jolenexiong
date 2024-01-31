@@ -10,40 +10,30 @@
 
 <body>
   <div id="app">
-
-
     <img
       src="https://static2.momsimage.com/wordpress/wp-content/uploads/2020/10/Harry-Potter%E2%80%99s-Spells-Explained.jpg"
-      class="gif">
+      class="gif" alt = "Spell with lightning bolt s">
     <form>
-      <label for="searchspells" class="enterspell">Search For Spells</label>
+      <label for="lookspells" class="enterspell">Search For Spells</label>
       <input type="text" id="lookspells">
       <input type="submit" value="Search" class="searchbtn" />
     </form>
-
-
-
     <h2 class="h2">By Type</h2>
-
     <form action="#">
       <select id="dropdown">
-        <option value ="select">Select a Type</option>
-        <option value = "Charms">Charms</option>
-        <option value = "Curses">Curses</option>
-        <option value = "Transfigurations">Transfigurations</option>
-        <option value = "Healing Spells">Healing Spells</option>
-        <option value = "Jinxes">Jinxes</option>
+        <option value="Show All">Show All</option>
+        <option value="Charm">Charm</option>
+        <option value="Curse">Curse</option>
+        <option value="Transformation">Transformation</option>
+        <option value="Healing spell">Healing spell</option>
+        <option value="Vanishment">Vanishment</option>
+        <option value="Conjuration">Conjuration</option>
+        <option value="Hex">Hex</option>
       </select>
-      <input type = "submit" value = "Submit"/>
     </form>
     <div class="gallery">
-
-
-
     </div>
-
   </div>
-
   <script type="module" src="/main.js"></script>
 </body>
 
