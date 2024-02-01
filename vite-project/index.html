@@ -10,28 +10,46 @@
 
 <body>
   <div id="app">
-    <img
-      src="https://static2.momsimage.com/wordpress/wp-content/uploads/2020/10/Harry-Potter%E2%80%99s-Spells-Explained.jpg"
-      class="gif" alt = "Spell with lightning bolt s">
+<h1>Harry Potter Digital Spellbook!</h1>
+<img src="https://imgix.ranker.com/user_node_img/50066/1001305888/original/harry-not-quite-straddling-his-broom-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375" class="harrypic">
+<img src="https://imgix.ranker.com/user_node_img/50066/1001305921/original/i-have-an-exciting-new-alternative-to-crossfit-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375" class="voldy">
+
     <form>
-      <label for="lookspells" class="enterspell">Search For Spells</label>
+      <label for="lookspells" class="enterspell">Enter Spell Name</label>
       <input type="text" id="lookspells">
       <input type="submit" value="Search" class="searchbtn" />
     </form>
+
+    <div class="errormessage"></div>
+
     <h2 class="h2">By Type</h2>
     <form action="#">
       <select id="dropdown">
-        <option value="Show All">Show All</option>
+        <option value="Select Type">Select Type</option>
         <option value="Charm">Charm</option>
         <option value="Curse">Curse</option>
         <option value="Transformation">Transformation</option>
-        <option value="Healing spell">Healing spell</option>
-        <option value="Vanishment">Vanishment</option>
+        <option value="Transfiguration">Transfiguration</option>
         <option value="Conjuration">Conjuration</option>
         <option value="Hex">Hex</option>
+        <option value="Jinx">Jinx</option>
+        <option value="Magical transportation">Magical transportation</option>
+        <option value ="Spell">Basic Spell</option>
       </select>
     </form>
+
+    <form>
+      <button class="showall">Show All</button>
+      
+      <button class="removebtn">Remove All</button>
+    </form>
     <div class="gallery">
+      <!-- `<div class="card">
+        <div class="name">${spell.attributes.name}</div>
+        <div class="img"><img src="${spell.attributes.image}"></div>
+        <div class="effect">Effect:${spell.attributes.effect}</div>
+        <div class="hand">Hand Movements:${spell.attributes.hand}</div>
+      </div>` -->
     </div>
   </div>
   <script type="module" src="/main.js"></script>
